@@ -6,8 +6,8 @@ from flask import Flask
 # ==========================
 # 🔹 Telegram Bot Settings
 # ==========================
-BOT_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN"  # ← replace with your bot token
-CHAT_ID = "YOUR_CHAT_ID"               # ← replace with your chat ID
+BOT_TOKEN = 8376149890  # ← replace with your bot token
+CHAT_ID = 1609197089                # ← replace with your chat ID
 
 # ==========================
 # 🔹 Flask Web Setup (for Render)
@@ -35,8 +35,8 @@ def check_crypto_signals():
 # 🔹 Telegram Message Sender
 # ==========================
 def send_telegram_message(message):
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-    payload = {"chat_id": CHAT_ID, "text": message}
+    url = f"https://api.telegram.org/bot8376149890:AAFiw5rok3-NbT5SdxHGWcmn3Q7aEOzKKYs/sendMessage"
+    payload = {"chat_id": 1609197089, "text": message}
     try:
         requests.post(url, data=payload)
     except Exception as e:
