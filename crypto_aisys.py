@@ -68,4 +68,18 @@ def run_and_alert():
         msg = "🚀 STRONG BUY ALERT 🚀\n\n"
         for _, row in strong_buys.iterrows():
             msg += f"{row['id'].upper()} ({row['symbol'].upper()})\nPrice: ${row['current_price']}\nRSI: {row['RSI']:.2f}\nTrend: {row['Trend']}\n\n"
-        send_t_
+        send_telegram_alert(msg)
+    else:
+        print("No strong buy signals now.")
+
+# ===== Keep Running Forever =====
+if __name__ == "__main__":
+    print("🤖 Crypto Analyzer Bot Started — Running Every 30 Minutes")
+    while True:
+        try:
+            run_and_alert()
+            print(f"✅ Checked at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        except Exception as e:
+            print(f"❌ Error: {e}")
+        time.sleep(1800)  # 30 minutes
+
